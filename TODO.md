@@ -1,0 +1,4 @@
+- [x] Clean up main.js: Remove duplicate journalEntries declaration and unused window functions.
+- [x] Implement createMoodChart function to display a bar chart of mood frequencies using Chart.js.
+- [x] Implement updateChart function to update the chart data after new entries.
+- [x] Test the mood journal functionality to ensure entries appear without page refresh.

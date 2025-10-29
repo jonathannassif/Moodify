@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feeling Anxious</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #cbb8ff 0%, #f2e9ff 100%);
+        transition: background 1s ease;
+        color: #3d348b;
+      }
+
+      .container {
+        text-align: center;
+        max-width: 480px;
+        padding: 2rem;
+      }
+
+      h1 {
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #4b3b9b;
+      }
+
+      .breathing-circle {
+        width: 130px;
+        height: 130px;
+        margin: 2rem auto;
+        border-radius: 50%;
+        background: rgba(107, 91, 208, 0.25);
+        animation: float 6s ease-in-out infinite;
+        box-shadow: 0 0 20px rgba(107, 91, 208, 0.2);
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 0.8;
+        }
+        50% {
+          transform: scale(1.3);
+          opacity: 1;
+        }
+      }
+
+      .message {
+        font-size: 1.1rem;
+        color: #4a437f;
+        opacity: 0;
+        transition: opacity 1s ease;
+        min-height: 40px;
+      }
+
+      .message.show {
+        opacity: 1;
+      }
+
+      button {
+        margin-top: 2rem;
+        padding: 0.7rem 1.5rem;
+        background-color: #6c5ce7;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #5a4fcf;
+        transform: translateY(-2px);
+      }
+
+      .grounding {
+        margin-top: 2rem;
+        display: none;
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      input {
+        padding: 0.6rem;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        font-family: inherit;
+      }
+
+      a.back {
+        display: block;
+        margin-top: 2rem;
+        text-decoration: none;
+        color: #4a437f;
+        font-weight: 500;
+      }
+
+      a.back:hover {
+        text-decoration: underline;
+      }
+
+      .quote {
+        font-style: italic;
+        color: #6b5ad0;
+        margin-top: 2rem;
+        font-size: 0.95rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Let’s ease that anxious mind.</h1>
+
+      <div class="breathing-circle"></div>
+
+      <p class="message" id="message">Take a slow, gentle breath.</p>
+
+      <button id="nextBtn">Next</button>
+
+      <div class="grounding" id="grounding">
+        <p>Ground yourself: name one thing you can see 👁️</p>
+        <input type="text" id="groundInput" placeholder="I see..." />
+        <button id="saveGrounding">Save</button>
+      </div>
+
+      <p class="quote">
+        "Anxiety does not empty tomorrow of its sorrows, but only empties today
+        of its strength." — Charles Spurgeon
+      </p>
+
+      <a href="../index.html" class="back">← Back</a>
+    </div>
+
+    <script>
+      const messages = [
+        "Take a slow, gentle breath.",
+        "Feel your body — shoulders down, jaw relaxed.",
+        "You are safe in this moment.",
+        "It’s okay to let your thoughts float by.",
+        "Now let’s ground ourselves.",
+      ];
+
+      let i = 0;
+      const msgEl = document.getElementById("message");
+      const nextBtn = document.getElementById("nextBtn");
+      const grounding = document.getElementById("grounding");
+
+      nextBtn.addEventListener("click", () => {
+        i++;
+        if (i < messages.length) {
+          msgEl.classList.remove("show");
+          setTimeout(() => {
+            msgEl.textContent = messages[i];
+            msgEl.classList.add("show");
+          }, 400);
+        } else {
+          msgEl.textContent = "You're doing great 🌿";
+          nextBtn.style.display = "none";
+          grounding.style.display = "flex";
+        }
+      });
+
+      const saveGrounding = document.getElementById("saveGrounding");
+      saveGrounding.addEventListener("click", () => {
+        const input = document.getElementById("groundInput").value.trim();
+        if (input) {
+          localStorage.setItem("anxiety_grounding", input);
+          alert("Saved! You're grounded 🌸");
+          document.getElementById("groundInput").value = "";
+        }
+      });
+
+      msgEl.classList.add("show");
+    </script>
+  </body>
+</html>

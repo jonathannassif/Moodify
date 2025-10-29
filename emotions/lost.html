@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feeling Lost</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(135deg, #e0e4eb, #f8f9fa);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+        color: #4c566a;
+      }
+
+      .container {
+        text-align: center;
+        max-width: 480px;
+        padding: 2rem;
+        z-index: 2;
+        position: relative;
+      }
+
+      h1 {
+        font-weight: 600;
+        color: #495057;
+        margin-bottom: 1.5rem;
+      }
+
+      .mist {
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        top: -50%;
+        left: -50%;
+        background: radial-gradient(
+          circle at 50% 50%,
+          rgba(255, 255, 255, 0.3),
+          transparent 70%
+        );
+        animation: drift 18s ease-in-out infinite;
+        opacity: 0.5;
+      }
+
+      @keyframes drift {
+        0% {
+          transform: translate(0, 0);
+        }
+        50% {
+          transform: translate(50px, 30px);
+        }
+        100% {
+          transform: translate(0, 0);
+        }
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #555;
+        margin-bottom: 1rem;
+      }
+
+      .prompt {
+        font-style: italic;
+        color: #6c757d;
+        margin-top: 1.2rem;
+      }
+
+      button {
+        margin-top: 2rem;
+        padding: 0.7rem 1.5rem;
+        background-color: #6c757d;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #5a6268;
+        transform: translateY(-2px);
+      }
+
+      .reflection {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 1s ease;
+      }
+
+      .reflection.show {
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      textarea {
+        padding: 0.7rem;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        resize: none;
+        font-family: inherit;
+        font-size: 1rem;
+      }
+
+      a.back {
+        display: block;
+        margin-top: 2rem;
+        text-decoration: none;
+        color: #555;
+        font-weight: 500;
+      }
+
+      a.back:hover {
+        text-decoration: underline;
+      }
+
+      .quote {
+        font-style: italic;
+        color: #666;
+        margin-top: 2rem;
+        font-size: 0.95rem;
+      }
+
+      .fade {
+        opacity: 0;
+        transition: opacity 1s ease;
+      }
+
+      .fade.show {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mist"></div>
+    <div class="container">
+      <h1>Feeling a bit lost 🌫️</h1>
+      <p id="message" class="fade">
+        That’s okay. You’re in a moment of searching, not a dead end.
+      </p>
+
+      <button id="nextBtn">Next</button>
+
+      <div class="reflection" id="reflection">
+        <p>
+          Write one thing you still feel connected to — something that grounds
+          you:
+        </p>
+        <textarea
+          id="anchor"
+          rows="3"
+          placeholder="I still believe in..."
+        ></textarea>
+        <button id="saveBtn">Save</button>
+      </div>
+
+      <p class="quote">"Not all those who wander are lost." — J.R.R. Tolkien</p>
+
+      <a href="../index.html" class="back">← Back</a>
+    </div>
+
+    <script>
+      const messages = [
+        "That’s okay. You’re in a moment of searching, not a dead end.",
+        "Sometimes getting lost means you’re about to find something new.",
+        "Pause. Breathe. Let uncertainty just be.",
+        "Now, reflect on one thing that feels true to you.",
+      ];
+
+      let index = 0;
+      const msg = document.getElementById("message");
+      const nextBtn = document.getElementById("nextBtn");
+      const reflection = document.getElementById("reflection");
+
+      // Initial fade-in
+      window.addEventListener("load", () => {
+        setTimeout(() => msg.classList.add("show"), 300);
+      });
+
+      nextBtn.addEventListener("click", () => {
+        index++;
+        if (index < messages.length) {
+          msg.classList.remove("show");
+          setTimeout(() => {
+            msg.textContent = messages[index];
+            msg.classList.add("show");
+          }, 400);
+        } else {
+          msg.classList.remove("show");
+          nextBtn.style.display = "none";
+          setTimeout(() => {
+            msg.textContent = "You’re finding your way back.";
+            msg.classList.add("show");
+            reflection.classList.add("show");
+          }, 500);
+        }
+      });
+
+      const saveBtn = document.getElementById("saveBtn");
+      saveBtn.addEventListener("click", () => {
+        const val = document.getElementById("anchor").value.trim();
+        if (val) {
+          localStorage.setItem("lost_anchor", val);
+          alert("Saved — you’re finding your anchor 🧭");
+          document.getElementById("anchor").value = "";
+        }
+      });
+    </script>
+  </body>
+</html>

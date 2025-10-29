@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feeling Stressed</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(to top, #ffe0b2, #ffd8a8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow: hidden;
+        position: relative;
+      }
+
+      /* ==== SOOTHING BACKGROUND WAVES ==== */
+      .wave {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 200%;
+        height: 150px;
+        background: rgba(255, 255, 255, 0.4);
+        border-radius: 100%;
+        animation: waveMove 6s ease-in-out infinite alternate;
+      }
+
+      .wave:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .wave:nth-child(2) {
+        animation-delay: 2s;
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      @keyframes waveMove {
+        0% {
+          transform: translateX(0) translateY(0);
+        }
+        100% {
+          transform: translateX(-50px) translateY(-10px);
+        }
+      }
+
+      /* ==== CONTAINER ==== */
+      .container {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        max-width: 700px;
+        z-index: 2;
+        position: relative;
+        backdrop-filter: blur(8px);
+      }
+
+      h1 {
+        color: #e67e22;
+        font-size: 1.8rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .education {
+        color: #555;
+        font-size: 1rem;
+        margin-bottom: 1.2rem;
+        line-height: 1.5;
+      }
+
+      #relaxBtn {
+        background-color: #e67e22;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 0.6rem 1.2rem;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+      }
+      #relaxBtn:hover {
+        background-color: #d35400;
+      }
+
+      #quote {
+        display: none;
+        margin-top: 0.8rem;
+        font-style: italic;
+        color: #555;
+      }
+
+      /* ==== GENTLE TIPS ==== */
+      .tip {
+        background-color: rgba(255, 243, 224, 0.7);
+        padding: 1rem;
+        border-radius: 10px;
+        margin: 1rem auto;
+        color: #333;
+        font-size: 1.05rem;
+        max-width: 500px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+
+      blockquote {
+        margin: 1.5rem auto;
+        color: #666;
+        font-style: italic;
+        border-left: 4px solid #ffd8a8;
+        padding-left: 1rem;
+        max-width: 500px;
+      }
+
+      .back-btn {
+        display: inline-block;
+        margin-top: 1.2rem;
+        padding: 0.6rem 1.2rem;
+        background-color: #f0f0f0;
+        border-radius: 8px;
+        color: #333;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background-color 0.3s;
+      }
+
+      .back-btn:hover {
+        background-color: #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Soothing Waves -->
+    <div class="wave"></div>
+    <div class="wave"></div>
+
+    <div class="container">
+      <h1>Feeling stressed? Let's pause together 🌿</h1>
+      <div class="education">
+        Stress is a signal — your body asking for a moment of care. It’s okay to
+        stop, breathe, and reset.
+      </div>
+
+      <button id="relaxBtn">Relax Now</button>
+      <p id="quote">“Inhale calm. Exhale tension.”</p>
+
+      <div class="tip">🌬️ Take 3 slow, deep breaths.</div>
+      <div class="tip">☕ Step away from screens for a moment.</div>
+      <div class="tip">🚶‍♀️ Move gently — stretch your shoulders.</div>
+
+      <blockquote>
+        "The greatest weapon against stress is our ability to choose one thought
+        over another." — William James
+      </blockquote>
+
+      <a href="../index.html" class="back-btn">← Back to Mood Selector</a>
+    </div>
+
+    <script>
+      const relaxBtn = document.getElementById("relaxBtn");
+      const quote = document.getElementById("quote");
+
+      relaxBtn.addEventListener("click", () => {
+        quote.style.display = "block";
+        relaxBtn.style.display = "none";
+      });
+    </script>
+  </body>
+</html>

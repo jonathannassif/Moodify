@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feeling Happy</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #fff6a2 0%, #ffe066 100%);
+        transition: background 1s ease;
+        color: #a85d00;
+      }
+
+      .container {
+        text-align: center;
+        max-width: 480px;
+        padding: 2rem;
+      }
+
+      h1 {
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: #f39c12;
+      }
+
+      .sun {
+        width: 120px;
+        height: 120px;
+        margin: 2rem auto;
+        border-radius: 50%;
+        background: radial-gradient(circle at center, #ffdd55, #f5a623);
+        box-shadow: 0 0 30px rgba(255, 204, 0, 0.5);
+        animation: pulse 4s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 30px rgba(255, 204, 0, 0.5);
+        }
+        50% {
+          transform: scale(1.2);
+          box-shadow: 0 0 50px rgba(255, 204, 0, 0.8);
+        }
+      }
+
+      .message {
+        font-size: 1.1rem;
+        color: #8a5a00;
+        opacity: 0;
+        transition: opacity 1s ease;
+        min-height: 40px;
+      }
+
+      .message.show {
+        opacity: 1;
+      }
+
+      button {
+        margin-top: 2rem;
+        padding: 0.7rem 1.5rem;
+        background-color: #f39c12;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #e67e22;
+        transform: translateY(-2px);
+      }
+
+      .gratitude {
+        margin-top: 2rem;
+        display: none;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+
+      input {
+        padding: 0.6rem;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        font-family: inherit;
+        text-align: center;
+      }
+
+      a.back {
+        display: block;
+        margin-top: 2rem;
+        text-decoration: none;
+        color: #a85d00;
+        font-weight: 500;
+      }
+
+      a.back:hover {
+        text-decoration: underline;
+      }
+
+      .quote {
+        font-style: italic;
+        color: #b57300;
+        margin-top: 2rem;
+        font-size: 0.95rem;
+      }
+
+      .sparkle {
+        position: fixed;
+        width: 6px;
+        height: 6px;
+        background: #fff3b0;
+        border-radius: 50%;
+        pointer-events: none;
+        animation: fall 4s linear infinite;
+      }
+
+      @keyframes fall {
+        from {
+          transform: translateY(0) scale(1);
+          opacity: 1;
+        }
+        to {
+          transform: translateY(100vh) scale(0.5);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>What a wonderful feeling 🌞</h1>
+
+      <div class="sun"></div>
+
+      <p class="message" id="message">Take a moment to enjoy this warmth.</p>
+
+      <button id="nextBtn">Next</button>
+
+      <div class="gratitude" id="gratitude">
+        <p>Write one thing you're grateful for ✨</p>
+        <input
+          type="text"
+          id="gratitudeInput"
+          placeholder="I'm grateful for..."
+        />
+        <button id="saveGratitude">Save</button>
+      </div>
+
+      <p class="quote">
+        "Happiness is when what you think, say, and do are in harmony." —
+        Mahatma Gandhi
+      </p>
+
+      <a href="../index.html" class="back">← Back</a>
+    </div>
+
+    <script>
+      const messages = [
+        "Take a moment to enjoy this warmth.",
+        "Let it fill you — right here, right now.",
+        "Smile — it’s contagious!",
+        "Your joy brightens the world.",
+        "Now let’s reflect with gratitude.",
+      ];
+
+      let index = 0;
+      const msgEl = document.getElementById("message");
+      const nextBtn = document.getElementById("nextBtn");
+      const gratitude = document.getElementById("gratitude");
+
+      nextBtn.addEventListener("click", () => {
+        index++;
+        if (index < messages.length) {
+          msgEl.classList.remove("show");
+          setTimeout(() => {
+            msgEl.textContent = messages[index];
+            msgEl.classList.add("show");
+          }, 400);
+        } else {
+          msgEl.textContent = "Keep smiling ☀️";
+          nextBtn.style.display = "none";
+          gratitude.style.display = "flex";
+        }
+      });
+
+      // Gratitude saving locally
+      const saveBtn = document.getElementById("saveGratitude");
+      saveBtn.addEventListener("click", () => {
+        const value = document.getElementById("gratitudeInput").value.trim();
+        if (value) {
+          localStorage.setItem("happy_gratitude", value);
+          alert("Saved! Happiness shared 💛");
+          document.getElementById("gratitudeInput").value = "";
+        }
+      });
+
+      msgEl.classList.add("show");
+
+      // ✨ Sparkle animation for playful joy
+      function createSparkle() {
+        const sparkle = document.createElement("div");
+        sparkle.classList.add("sparkle");
+        sparkle.style.left = Math.random() * 100 + "vw";
+        sparkle.style.animationDuration = 3 + Math.random() * 2 + "s";
+        document.body.appendChild(sparkle);
+        setTimeout(() => sparkle.remove(), 4000);
+      }
+
+      setInterval(createSparkle, 400);
+    </script>
+  </body>
+</html>
