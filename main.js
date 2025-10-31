@@ -255,3 +255,33 @@ document.addEventListener("DOMContentLoaded", function () {
     createMoodChart();
   }
 });
+document.addEventListener("DOMContentLoaded", function () {
+  // ---- Existing code ----
+  // (keep all your emotion quotes, journal logic, and chart logic here)
+
+  // ---- Add this INSIDE the DOMContentLoaded block ----
+  const quoteGeneratorBtn = document.getElementById("quoteGeneratorBtn");
+  const inspireQuotes = document.getElementById("inspireQuotes");
+  const quotes = [
+    "Small steps are still progress.",
+    "Breathe. You're doing fine.",
+    "One calm moment is one victory.",
+  ];
+
+  function pickRandomQuote() {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    return quotes[randomIndex];
+  }
+
+  if (quoteGeneratorBtn && inspireQuotes) {
+    quoteGeneratorBtn.addEventListener("click", () => {
+      const randomQuote = pickRandomQuote();
+      inspireQuotes.textContent = randomQuote;
+      inspireQuotes.style.opacity = 0;
+      setTimeout(() => {
+        inspireQuotes.style.transition = "opacity 0.5s";
+        inspireQuotes.style.opacity = 1;
+      }, 10);
+    });
+  }
+});
