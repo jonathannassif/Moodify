@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feeling Lost</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background-color: #dee2e6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 800px;
+        background-color: white;
+        padding: 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgb(0, 0, 0, 0.1);
+        display: grid;
+        grid-template-rows: auto auto auto 1fr auto auto;
+        gap: 1rem;
+      }
+
+      h1 {
+        text-align: center;
+        color: #6c757d;
+        margin-bottom: 0.2rem;
+      }
+
+      .education {
+        text-align: center;
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 0.5rem;
+      }
+
+      .calm-Btn-Section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0;
+      }
+
+      #calmBtn {
+        margin-top: 0.2rem;
+        padding: 0.2rem 0.5rem;
+        background-color: #6c757d;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s;
+        justify-self: center;
+      }
+      #calmBtn:hover {
+        background-color: #5a6268;
+      }
+      #quote {
+        display: none;
+        margin-top: 0;
+        font-style: italic;
+        color: #555;
+        text-align: center;
+      }
+
+      .message {
+        text-align: center;
+        font-size: 1.1rem;
+        color: #444;
+      }
+
+      .grid-tips {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+      }
+
+      .tip {
+        background-color: #f8f9fa;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        font-size: 1rem;
+        color: #333;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .tip::before {
+        content: "🧭";
+        font-size: 1.2rem;
+      }
+
+      blockquote {
+        font-style: italic;
+        color: #666;
+        border-left: 4px solid #dee2e6;
+        padding-left: 1rem;
+        margin: 0 auto;
+        max-width: 600px;
+      }
+
+      .resources {
+        text-align: center;
+        font-size: 0.9rem;
+        color: #777;
+      }
+
+      .resources a {
+        color: #6c757d;
+        text-decoration: none;
+      }
+
+      .resources a:hover {
+        text-decoration: underline;
+      }
+
+      .back-btn {
+        display: inline-block;
+        text-align: center;
+        margin-top: 1rem;
+        padding: 0.7rem 1.2rem;
+        background-color: #eee;
+        border-radius: 6px;
+        text-decoration: none;
+        color: #333;
+        font-weight: 600;
+        transition: background-color 0.3s;
+        justify-self: center;
+      }
+
+      .back-btn:hover {
+        background-color: #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>You are feeling lost right now</h1>
+      <div class="education">
+        Feeling lost often means you're in a period of transition or
+        uncertainty. It's a normal part of life and can lead to growth and new
+        directions.
+      </div>
+      <div class="calm-Btn-Section">
+        <button id="calmBtn" class="btn btn-primary">Find Your Way</button>
+        <p id="quote"></p>
+      </div>
+      <p class="message">
+        It's okay. Everyone feels lost sometimes. Here are some ideas to help
+        you navigate:
+      </p>
+
+      <div class="grid-tips">
+        <div class="tip">
+          Take a deep breath. It's just a chapter, not the whole book.
+        </div>
+        <div class="tip">
+          Write down what you know for sure — anchor yourself.
+        </div>
+        <div class="tip">Talk to someone you trust. Don't isolate.</div>
+        <div class="tip">
+          Try a walk without your phone. Let your mind breathe.
+        </div>
+        <div class="tip">Set small, achievable goals for today.</div>
+        <div class="tip">Explore a new interest or hobby.</div>
+        <div class="tip">Practice self-compassion — be kind to yourself.</div>
+        <div class="tip">
+          Consider seeking guidance from a mentor or counselor.
+        </div>
+      </div>
+
+      <blockquote>
+        "Not all those who wander are lost." — J.R.R. Tolkien
+      </blockquote>
+
+      <div class="resources">
+        <p>
+          Explore career or life coaching resources:
+          <a href="https://www.mindtools.com/" target="_blank">MindTools</a>
+        </p>
+      </div>
+
+      <a href="../index.html" class="back-btn">← Back to Mood Selector</a>
+    </div>
+
+    <script src="../main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="miniCalc">
+      <input type="number" id="num1" placeholder="First Number" />
+      <input type="number" id="num2" placeholder="Second Number" />
+      <button id="btn">Calculate</button>
+      <p id="result">Result will appear here</p>
+    </div>
+
+    <br>
+
+    <div class="changeColor">
+      <input type="text" id="messageInput" placeholder="Type Message Here" />
+      <button id="checkBtn">Change Color</button>
+      <p id="display"></p>
+    </div>
+
+    <br>
+
+    <div class="toDoList">
+      <input type="text" placeholder="Enter a task" />
+      <button id="addList">Add List</button>
+      <ul id="ul"></ul>
+    </div>
+
+    <br>
+
+    <div class="characterCount">
+      <textarea id="textarea" placeholder="Type something..."></textarea>
+      <p id="charactersP">Characters: 0</p>
+      <p id="upper">Uppercase</></p>
+    </div>
+
+    <br>
+
+    <div class="Greeting">
+      <input id="nameInput" type="text" placeholder="Enter Name" />
+      <button id="greetBtn">Greet me</button>
+      <p id="theGreeting"></p>
+    </div>
+
+
+    <div class="counterChallenge">
+      <label id="countLabel">0</label>
+      <div id="btnContainer">
+        <button id="decBtn" class="buttons">Decrease</button>
+        <button id="resetBtn" class="buttons">Reset</button>
+        <button id="incBtn" class="buttons">Increase</button>
+      </div>
+    </div>
+
+
+    <div class="dice">
+      <button id="diceBtn">Roll</button>
+      <label id="diceLabel"></label>
+    </div>
+
+    <div class="password">
+      <input type="password" id="pass" placeholder="Enter password" /> 
+      <p id="charCount">0 characters</p>
+      <button id="toggleBtn">👁️</button>
+      <p id="strengthText">Strength: </p>
+      <input type="password" id="passConfirm" placeholder="Re-Enter password" />
+      <p id="matchText"></p>
+    </div>
+
+<!--  TODO LIST HTML -->
+<div class="todo">
+    <input type="text" id="taskInput" placeholder="Enter a task" />
+    <button id="addTaskBtn">Add</button>
+    <p id="errorTask"></p>
+    <ul id="taskList"></ul>
+  </div>
+
+<style>
+  .done { text-decoration: line-through; color: gray; }
+</style>
+
+<div class="theme-toggle">
+  <h2>🌗 Dark / Light Mode</h2>
+  <button id="toggleTheme">Toggle Theme</button>
+  <p>Demo</p>
+</div>
+
+<div class="paymentSection">
+  <h2>💳 Payment Section</h2>
+  <input type="checkbox" id="myCheckBox" >
+  <label for="myCheckBox">Subscribe</label><br>
+
+  <input type="radio" id="visaBtn" name="card" >
+  <label for="visaBtn">Visa</label><br>
+  <input type="radio" id="masterCardBtn" name="card" >
+  <label for="masterCardBtn">MasterCard</label><br>
+  <input type="radio" id="paypalBtn" name="card" >
+  <label for="paypalBtn">PayPal</label><br>
+
+  <button type="submit" id="submitBtn">Submit</button> 
+
+  <p id="subResult"></p>
+  <p id="cardResult"></p>
+</div>
+
+<div class="temp-challenge">
+  <h1>🌡️ Temperature Converter</h1>
+  <input type="number" id="textbox" placeholder="Enter temperature" value="0" /> <br>
+
+  <div class="radio-group">
+    <input type="radio" id="toCelsius" name="conversion"/>
+    <label for="toCelsius">To🔱 Celsius</label>
+    <input type="radio" id="toFahrenheit" name="conversion" />
+    <label for="toFahrenheit">To🔱 Fahrenhiet</label>
+  </div>
+
+  <button type="submit" onclick="convert()">Submit</button>
+  <p id="resultTemp">Select the unit</p>
+</div>
+
+
+<div id="container" class="diceWithImages">
+  <h1>🎲 Dice Roller</h1>
+  <label for="numDice">Number of Dice to Roll:</label> <br>
+  <input type="number" id="numDice" placeholder="Enter a number" min="1" value="1"/> <br>
+  <button onclick="rollDice()">Roll Dice</button>
+  <div id="diceResult"></div>
+  <div id="diceImages"></div>
+</div>
+
+<div class="randomColor">
+  <h1>🎨 Random Color Generator</h1>
+  <button id="colorBtn">Generate Random Color</button>
+  <div id="colorDisplay"></div>
+  <p id="colorCode"></p>
+</div>
+
+<div class="fitnessTracker">
+    <h1>Fitness Tracker</h1>
+
+    <form id="userForm">
+      <input type="text" id="name" placeholder="Name" required />
+      <input type="number" id="age" placeholder="Age" required />
+      <input type="text" id="sport" placeholder="Sport (Athlete only)" />
+      <button type="submit" id="addUserBtnFitness">Add User</button>
+    </form>
+
+    <div id="users"></div>
+  </div>
+
+<div class="focusTimerChallenge">
+<input id="inputTime" placeholder="Enter Minutes">
+  <button id="startTimerBtn">Start</button>
+  <textarea id="displayTextArea" readonly></textarea>
+  <button id="stopTimerBtn">Stop</button>
+  <audio id="alarmSound" src=""></audio>
+</div>  
+  
+
+
+<div class="expenseTracker">
+  <h2>Daily Expense Tracker</h2>
+  <input  class="expenseTrackerElements"  id="expenseName" placeholder="Enter Expense">
+
+  
+  <input class="expenseTrackerElements"  id="expenseAmount" placeholder="Enter Amount">
+
+
+  <button  class="expenseTrackerElements"  id="addExpenseBtn">Add Expense</button>
+  <button   class="expenseTrackerElements" id="resetBtnn">Reset</button>
+
+  <ul id="expenseList"></ul>
+  <h3>Total: $<span id="totalAmount">0</span></h3>
+</div>
+
+
+<div id="clockContainer">
+  <div id="clock">
+    00:00:00
+  </div>
+
+</div>
+
+<div id="DomChallenge">
+  <button id="redBtnColor">Red</button>
+  <button id="blueBtnColor">Blue</button>
+  <button id="greenBtnColor">Green</button>
+
+</div>
+  <script src="./Practice.js" defer></script>
+  </body>
+</html>

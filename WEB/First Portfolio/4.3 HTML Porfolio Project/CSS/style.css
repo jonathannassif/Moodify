@@ -1,0 +1,87 @@
+/* Reset default browser styles */
+* {
+    margin: 0; /* Remove default spacing */
+    padding: 0; /* Remove default padding */
+    box-sizing: border-box; /* Makes width calculations easier */
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif; /* Font style */
+    background-color: #f9f9f9; /* Light background */
+    color: #333; /* Dark text */
+    line-height: 1.6; /* Better readability */
+}
+
+/* Header styling */
+header {
+    text-align: center; /* Center text */
+    padding: 2rem; /* Space inside header */
+    background-color: #222; /* Dark background */
+    color: white; /* White text */
+}
+
+/* Navigation menu */
+nav {
+    text-align: center;
+    background-color: #444;
+    padding: 0.5rem;
+}
+
+nav a {
+    color: white; /* Link color */
+    margin: 0 1rem; /* Space between links */
+    text-decoration: none; /* Remove underline */
+}
+
+nav a:hover {
+    text-decoration: underline; /* Add underline when hovered */
+}
+
+/* Sections */
+section {
+    padding: 2rem; /* Space inside sections */
+    max-width: 800px; /* Limit width for readability */
+    margin: auto; /* Center section */
+}
+
+/* Project cards */
+.project-card {
+    background-color: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Soft shadow */
+}
+
+/* Contact form */
+form {
+    display: flex; /* Arrange inputs vertically */
+    flex-direction: column;
+}
+
+form input, form textarea, form button {
+    margin-bottom: 1rem; /* Space between fields */
+    padding: 0.5rem; /* Space inside fields */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+}
+
+form button {
+    background-color: #222; /* Dark button */
+    color: white; /* White text */
+    cursor: pointer; /* Pointer on hover */
+}
+
+form button:hover {
+    background-color: #555; /* Lighter dark on hover */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #222;
+    color: white;
+    margin-top: 2rem;
+}

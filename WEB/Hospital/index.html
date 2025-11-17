@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>City General Hospital</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="manifest" href="manifest.json" />
+    <meta
+      name="description"
+      content="City General Hospital - Your health is our priority. Comprehensive medical services with compassionate care."
+    />
+    <meta
+      name="keywords"
+      content="hospital, medical services, doctors, emergency care, City General Hospital"
+    />
+    <meta name="author" content="City General Hospital" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <i class="fa-solid fa-hospital"></i>
+          City General Hospital
+        </div>
+        <ul>
+          <li><button data-view="home">Home</button></li>
+          <li><button data-view="about">About</button></li>
+          <li><button data-view="services">Services</button></li>
+          <li><button data-view="doctors">Doctors</button></li>
+          <li><button data-view="news">News</button></li>
+          <li><button data-view="contact">Contact</button></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="app">
+      <!-- Content will be loaded here by JavaScript -->
+    </main>
+    <footer>
+      <p>&copy; 2024 City General Hospital. All rights reserved.</p>
+    </footer>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="modal.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

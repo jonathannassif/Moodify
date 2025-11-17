@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feeling Anxious</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background-color: #d0bfff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 800px;
+        background-color: white;
+        padding: 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgb(0, 0, 0, 0.1);
+        display: grid;
+        grid-template-rows: auto auto auto 1fr auto auto;
+        gap: 1rem;
+      }
+
+      h1 {
+        text-align: center;
+        color: #6c5ce7;
+        margin-bottom: 0.2rem;
+      }
+
+      .education {
+        text-align: center;
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 0.5rem;
+      }
+
+      .calm-Btn-Section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0;
+      }
+
+      #calmBtn {
+        margin-top: 0.2rem;
+        padding: 0.2rem 0.5rem;
+        background-color: #6c5ce7;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s;
+        justify-self: center;
+      }
+      #calmBtn:hover {
+        background-color: #5a4fcf;
+      }
+      #quote {
+        display: none;
+        margin-top: 0;
+        font-style: italic;
+        color: #555;
+        text-align: center;
+      }
+
+      .message {
+        text-align: center;
+        font-size: 1.1rem;
+        color: #444;
+      }
+
+      .grid-tips {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+      }
+
+      .tip {
+        background-color: #e8e0ff;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        font-size: 1rem;
+        color: #333;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .tip::before {
+        content: "🧘";
+        font-size: 1.2rem;
+      }
+
+      blockquote {
+        font-style: italic;
+        color: #666;
+        border-left: 4px solid #d0bfff;
+        padding-left: 1rem;
+        margin: 0 auto;
+        max-width: 600px;
+      }
+
+      .resources {
+        text-align: center;
+        font-size: 0.9rem;
+        color: #777;
+      }
+
+      .resources a {
+        color: #6c5ce7;
+        text-decoration: none;
+      }
+
+      .resources a:hover {
+        text-decoration: underline;
+      }
+
+      .back-btn {
+        display: inline-block;
+        text-align: center;
+        margin-top: 1rem;
+        padding: 0.7rem 1.2rem;
+        background-color: #eee;
+        border-radius: 6px;
+        text-decoration: none;
+        color: #333;
+        font-weight: 600;
+        transition: background-color 0.3s;
+        justify-self: center;
+      }
+
+      .back-btn:hover {
+        background-color: #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>You are feeling anxious right now</h1>
+      <div class="education">
+        Anxiety is your body's natural response to stress, often manifesting as
+        worry, restlessness, or physical tension. It's common and manageable
+        with the right tools.
+      </div>
+      <div class="calm-Btn-Section">
+        <button id="calmBtn" class="btn btn-primary">Calm Me Down</button>
+        <p id="quote"></p>
+      </div>
+      <p class="message">
+        Your mind is racing, but you're not alone. Try these personalized tips:
+      </p>
+
+      <div class="grid-tips">
+        <div class="tip">
+          Breathe in for 4, hold for 4, out for 4 (Box breathing)
+        </div>
+        <div class="tip">Do a quick body scan — notice tension areas</div>
+        <div class="tip">Journal what you're anxious about — name it</div>
+        <div class="tip">Do one tiny thing you have control over</div>
+        <div class="tip">Limit caffeine for now</div>
+        <div class="tip">Play calm background sounds or music</div>
+        <div class="tip">Ground yourself: Name 5 things you can see</div>
+        <div class="tip">Practice progressive muscle relaxation</div>
+      </div>
+
+      <blockquote>
+        "Anxiety does not empty tomorrow of its sorrows, but only empties today
+        of its strength." — Charles Spurgeon
+      </blockquote>
+
+      <div class="resources">
+        <p>
+          Need more help? Check out:
+          <a href="https://www.anxiety.org/" target="_blank"
+            >Anxiety and Depression Association of America</a
+          >
+        </p>
+      </div>
+
+      <a href="../index.html" class="back-btn">← Back to Mood Selector</a>
+    </div>
+
+    <script src="../main.js"></script>
+  </body>
+</html>

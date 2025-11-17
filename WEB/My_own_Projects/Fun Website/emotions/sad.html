@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feeling Sad</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background-color: #a5d8ff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 800px;
+        background-color: white;
+        padding: 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgb(0, 0, 0, 0.1);
+        display: grid;
+        grid-template-rows: auto auto auto 1fr auto auto;
+        gap: 1rem;
+      }
+
+      h1 {
+        text-align: center;
+        color: #3498db;
+        margin-bottom: 0.2rem;
+      }
+
+      .education {
+        text-align: center;
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 0.5rem;
+      }
+
+      .calm-Btn-Section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0;
+      }
+
+      #calmBtn {
+        margin-top: 0.2rem;
+        padding: 0.2rem 0.5rem;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s;
+        justify-self: center;
+      }
+      #calmBtn:hover {
+        background-color: #2980b9;
+      }
+      #quote {
+        display: none;
+        margin-top: 0;
+        font-style: italic;
+        color: #555;
+        text-align: center;
+      }
+
+      .message {
+        text-align: center;
+        font-size: 1.1rem;
+        color: #444;
+      }
+
+      .grid-tips {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+      }
+
+      .tip {
+        background-color: #e3f2fd;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        font-size: 1rem;
+        color: #333;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .tip::before {
+        content: "💙";
+        font-size: 1.2rem;
+      }
+
+      blockquote {
+        font-style: italic;
+        color: #666;
+        border-left: 4px solid #a5d8ff;
+        padding-left: 1rem;
+        margin: 0 auto;
+        max-width: 600px;
+      }
+
+      .resources {
+        text-align: center;
+        font-size: 0.9rem;
+        color: #777;
+      }
+
+      .resources a {
+        color: #3498db;
+        text-decoration: none;
+      }
+
+      .resources a:hover {
+        text-decoration: underline;
+      }
+
+      .back-btn {
+        display: inline-block;
+        text-align: center;
+        margin-top: 1rem;
+        padding: 0.7rem 1.2rem;
+        background-color: #eee;
+        border-radius: 6px;
+        text-decoration: none;
+        color: #333;
+        font-weight: 600;
+        transition: background-color 0.3s;
+        justify-self: center;
+      }
+
+      .back-btn:hover {
+        background-color: #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>You are feeling sad right now</h1>
+      <div class="education">
+        Sadness is a natural emotion that helps us process loss, disappointment,
+        or difficult experiences. It's okay to feel sad and allow yourself to
+        grieve.
+      </div>
+      <div class="calm-Btn-Section">
+        <button id="calmBtn" class="btn btn-primary">Comfort Yourself</button>
+        <p id="quote"></p>
+      </div>
+      <p class="message">
+        It's okay to feel this way. Here are some gentle things to help you
+        through:
+      </p>
+
+      <div class="grid-tips">
+        <div class="tip">Take a few deep breaths. You are safe right now.</div>
+        <div class="tip">
+          Write down what you're feeling — without judgment.
+        </div>
+        <div class="tip">Drink a glass of water or go for a short walk.</div>
+        <div class="tip">Put on calming music that soothes you.</div>
+        <div class="tip">Talk to a friend or simply be with your thoughts.</div>
+        <div class="tip">
+          Pray, journal, or just sit in silence. It's okay to feel.
+        </div>
+        <div class="tip">Do something kind for yourself, like a warm bath.</div>
+        <div class="tip">Reach out to a loved one for support.</div>
+      </div>
+
+      <blockquote>
+        "Tears come from the heart and not from the brain." — Leonardo da Vinci
+      </blockquote>
+
+      <div class="resources">
+        <p>
+          Find support for grief or sadness:
+          <a href="https://www.griefshare.org/" target="_blank">GriefShare</a>
+        </p>
+      </div>
+
+      <a href="../index.html" class="back-btn">← Back to Mood Selector</a>
+    </div>
+
+    <script src="../main.js"></script>
+  </body>
+</html>
